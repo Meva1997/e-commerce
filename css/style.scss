@@ -1,0 +1,446 @@
+$fontFamily: "lexend", arial, Helvetica, sans-serif; 
+$backgroundColor: #f3c940; 
+$darkBackgroundColor: #333333;
+$darkTextColor: #ffffff;
+
+@mixin flexboxHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+@mixin flexboxMenu {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+@mixin flexboxProducts {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+@mixin cart {
+    width: 500px;
+    background-color: white;
+    padding: 25px;
+    box-sizing: border-box;
+    height: 100%;
+    position: fixed;
+    right: 100%;
+    top: 100px;
+    box-shadow: -19px -1px 22px -15px rgba(0, 0, 0, 0.30);
+}
+
+@mixin cartTitle {
+    width: 100%;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
+    padding: 20px;
+    box-sizing: border-box;
+    color: black;
+}
+
+@mixin cartDiv {
+    border-bottom: 1px solid #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin: 20px;
+    box-sizing: border-box;
+}
+
+@mixin cartProduct {
+    font-size: 20px;
+    font-weight: 500;
+    color: black;
+}
+
+@mixin cartPrice {
+    font-weight: 500;
+    font-size: 20px;
+    color: black;
+}
+
+@mixin flexboxFooter {
+    display: flex;
+    flex-direction: column;
+}
+
+%linkVisited {
+    text-decoration: none;
+    color: rgb(128, 0, 128);
+}
+
+%linkActive { 
+    text-decoration: none;
+    color: rgb(20, 188, 245);
+}
+
+body {
+    width: 100%;
+    font-size: 15px;
+    font-weight: 300;
+    color: #323030;
+    font-family: $fontFamily;
+    margin: 0;
+}
+
+img {
+    width: 100px;
+}
+
+.header {
+    width: 100%;
+    padding: 10px 50px;
+    background-color: $backgroundColor;
+    @include flexboxHeader;
+}
+
+.header__logo {
+    width: 100px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.header__logo--bota {
+    width: 150px;
+}
+
+
+main {
+    .menu {
+        @include flexboxMenu;
+        padding: 10px;
+        color: #B62626;
+    }
+
+    .menu__nav {
+        cursor: pointer;
+        box-sizing: border-box;
+        background-color: $backgroundColor;
+        padding: 20px 50px;
+    }
+
+    .about-us__title {
+        color: $backgroundColor;
+    }
+
+    .about-us__text:hover {
+        background-color: $backgroundColor;
+    }
+
+    .banner {
+        width: 100%;
+        padding: 60px 0;
+        text-align: center;
+        background-image: url(../img/promocion-nuevos-productos-concepto-publicidad-anuncio-publico-califica-producto-ilustracion_277904-1694.jpg.avif);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-y: 60%;
+    }
+
+    .banner__title { 
+        width: 100%;
+        font-weight: 600;
+        font-size: 30px;
+        margin: 10px;
+        color: #e81919;
+    }
+
+    .banner__text {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 25px;
+        opacity: 0.7;
+        color: #050505;
+    }
+
+    .products { 
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+        @include flexboxProducts; 
+    }    
+
+    .products__article {
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .products__img { 
+        width: 200px;
+        margin-bottom: 15px;
+    }
+
+    .products__name {
+        font-weight: 500;
+        font-size: 17px;
+        margin-bottom: 5px;
+    }
+
+    .products__price {
+        font-weight: 300;
+        font-size: 15px;
+        background-color: $backgroundColor;
+    }
+
+    .cart {
+        @include cart;
+    }
+
+    .cart__title {
+        @include cartTitle;
+    }
+
+    .cart__div {
+        @include cartDiv;
+    }
+
+    .cart__img {
+        width: 20%;
+    }
+
+    .cart__product {
+        @include cartProduct;
+    }
+
+    .cart__price {
+        @include cartPrice;
+    }
+
+    .cart__delete {
+        width: 10%;
+        cursor: pointer;
+    }
+
+    .cart:hover {
+        background-color: $backgroundColor;
+    }
+}
+
+footer {
+    .footer {
+        @include flexboxFooter;
+    }
+
+    .footer__menu li:nth-child(odd) {
+        color: $backgroundColor;
+    }
+
+    .footer__menu--index:visited {
+        @extend %linkVisited;
+    }
+
+    .footer__menu--index:active {
+        @extend %linkActive;
+    }
+}
+
+
+@media (prefers-color-scheme:dark){
+    body {
+        background-color: $darkBackgroundColor;
+        color: $darkTextColor;
+    }
+
+    .header {
+        background-color: $backgroundColor;
+    }
+
+    .menu__nav {
+        background-color: #070606;
+    }
+
+    .about-us__title, .banner__title {
+        color: $darkTextColor;
+    }
+
+    .about-us__text:hover {
+        background-color: #555555;
+    }
+
+    .banner__text {
+        color: $darkTextColor;
+    }
+
+    .products__price {
+        background-color: #666666;
+    }
+
+    .cart{
+        background-color: #050505;
+        color: $darkTextColor;
+    }
+
+    .cart__div{
+        border-bottom: 1px solid white;
+    }
+
+    .cart__title{
+        color: $darkschemeColor;
+    }
+
+    .cart__product{
+        color: $darkschemeColor;
+    }
+
+    .cart__price{
+        color: $darkschemeColor;
+    }
+
+    .cart__delete{
+        background-color: $darkschemeColor;
+    }
+}
+
+@media (max-width: 780px) {
+    body{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .header {
+        width: 54em;
+        padding: 20px;
+    }
+
+    .header i {
+        width: 10%;
+    }
+
+    .menu__nav{
+       padding: clamp(3rem, 2vw, 4rem);
+       font-size: 15px;
+       text-align: center;
+    }
+
+    .about-us{
+        text-align: center;
+        font-size: clamp(1rem, 2.5vw, 2rem);
+        width: 105%;
+    }
+
+    @media (hover: hover){
+        .about-us p:hover { 
+            background-color:$backgroundColor;
+        }
+    }
+
+    .banner{
+        width: 105%;
+    }
+
+    .products{
+        grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+        padding-left: 4.06em;
+    }
+
+    .products__img{
+        width: 150px;
+    }
+
+    .cart{
+        width: 400px;
+        top: 80px;
+    }
+
+    iframe{
+        width: 105%;
+    }
+}
+
+
+
+@media (max-width: 430px) {
+    header {
+        width: 38em;
+        padding: 20px 40px;
+    }
+
+    .logo{
+        width: 100px;
+    }
+
+    header i {
+        width: 70px
+    }
+    
+    .menu{
+        width: 185%;
+    }
+
+    .menu__nav{
+        padding: clamp(1.55rem, 2vw, 2rem);
+        font-size: 20x;
+    }
+
+    .about-us{
+        text-align: center;
+        font-size: clamp(.99rem, 2.5vw, 2rem);
+        width: 185%;
+    }
+
+    .banner{
+        padding: clamp(1.75rem,2vw,0rem);
+        width: 185%;
+    }
+
+    .banner__title{
+        font-size: 20px;
+    }
+
+    .banner__text{
+        font-size: 16px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+        padding: 1em;
+        width: 185%;
+    }
+
+    .products__img{
+        max-width: 200px;
+        margin-bottom: 10px;
+    }
+
+    .products__name,
+    .products__price{
+        padding: 0 10px;
+    }
+
+    .cart {
+        width: 85%;
+        box-shadow: none;
+    }
+
+    .cart__title{
+        font-size: 25px;
+    }
+
+    .cart__div{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cart__img{
+        width: 20%;
+        padding: 15px 0px;
+    }
+
+    .cart p{
+        margin: 5px;
+    }
+
+    .cart__delete{
+        width: 50px;
+    }
+
+    iframe{
+        width: 135%;
+    }
+}
