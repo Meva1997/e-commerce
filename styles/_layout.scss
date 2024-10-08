@@ -1,0 +1,488 @@
+
+
+body {
+   @include body;
+}
+
+img {
+    width: 100px;
+}
+
+.header {
+    width: 100%;
+    padding: 10px 50px;
+    background-color: $backgroundColor;
+    @include flexboxHeader;
+}
+
+.header__logo {
+    width: 100px;
+    cursor: pointer;
+    display: inline-block;
+
+    &:hover{
+        transition: transform .3s ease ;
+        transform: scale(1.05);
+    }
+}
+
+.header__logo--bota {
+    width: 150px;
+}
+
+.header__logo--carrito { 
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    position: relative;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+
+    .carrito__badge{
+        @include carritoBadge;
+    }    
+}
+
+
+main {
+    .menu {
+        @include flexboxMenu;
+        padding: 10px;
+    }
+
+    .menu__nav {
+        cursor: pointer;
+        box-sizing: border-box;
+        background-color: $backgroundColor;
+        color: $darkBackgroundColor;
+        font-size: 18px;
+        font-weight:600;
+        padding: 20px 50px;
+    }
+
+    .menuLateral {
+        display: none;
+
+        &--show{
+            display: block;
+            @include menuLateral;
+        }
+    }
+
+    
+
+    .menuLateral_div{
+        @include menuLateralDiv;
+    }
+
+    .menuLateral_title {
+        @include menuLateralTitle;
+    }
+
+    .menu__x{
+        box-sizing: border-box;
+        display: flex;
+        width: 10px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+
+        &:hover{
+            transform: scale(1.2);
+        }
+    }
+
+    .menuLateral_nav{
+        @include menuLateral_nav;
+    }
+
+    .about-us__title {
+        color: $backgroundColor;
+        text-align: center;
+        font-size: 60px;
+    }
+
+    .about-us__text{
+        padding-bottom: 50px;
+        text-align:center;
+    }
+
+    .banner {
+        width: 100%;
+        padding: 60px 0px;
+        text-align: center;
+        background-image: url(../img/promocion-nuevos-productos-concepto-publicidad-anuncio-publico-califica-producto-ilustracion_277904-1694.jpg.avif);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position-y: 60%;
+    }
+
+    .banner__title { 
+        width: 100%;
+        font-weight: 600;
+        font-size: 30px;
+        margin: 10px;
+        color: #e81919;
+    }
+
+    .banner__text {
+        width: 100%;
+        margin: 0 auto;
+        font-size: 25px;
+        opacity: 0.7;
+        color: #050505;
+    }
+
+    .products { 
+        width: 80%;
+        margin: 0 auto;
+        padding-top: 100px;
+        @include flexboxProducts; 
+    }    
+
+    .products__article {
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .products__img { 
+        width: 200px;
+        margin-bottom: 15px;
+    }
+
+    .products__name {
+        font-weight: bold;
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    .products__price {
+        font-weight:bold;
+        font-size: 20px;
+        color: #e81919;
+        background-color: unset;
+    }
+
+    .product__quantity{
+        text-align: center;
+        font-weight: bold;
+        font-size:small;
+        padding: 3px;
+        margin-top: 10px;
+    }
+
+    .product__cart{
+        cursor: pointer;   
+        padding: 5px;
+        margin-top: 5px;
+        background-color: $backgroundColor;
+        font-weight: bold;
+        border-radius: 8%;
+        border-color: #050505;
+        border-style: double;
+        border-width: 10px;
+        
+        &:hover{
+            transition: transform 0.2s ease;
+            transform:scale(1.1);
+        }
+    }
+
+    .cart {
+        display: none;
+
+        &--show{
+        display: block;
+        @include cart;
+        }
+    }
+
+    .cart__title--div{
+        @include cartTitleDiv;
+    }
+
+    .cart__title {
+        @include cartTitle;
+    }
+
+    .cart__x{
+        box-sizing: border-box;
+        display: flex;
+        width: 60px;
+        padding-right: 25px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+
+        &:hover{
+            transform: scale(1.3);
+        }
+    }
+
+    .cart__div {
+        @include cartDiv;
+    }
+
+    .cart__img {
+        width: 25%;
+    }
+
+    .cart__product {
+        @include cartProduct;
+    }
+
+    .cart__price {
+        @include cartPrice;
+    }
+
+    .cart__delete {
+        width: 15%;
+        cursor: pointer;
+        background-color: unset;
+    }
+
+}
+
+.video-container {
+    article {
+        h3 {
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 20px;
+            color: $backgroundColor;
+            padding-top: 50px;
+        }
+    }
+
+    .responsive-iframe {
+        position:relative;
+        padding-bottom: 40%; 
+        overflow: hidden;
+
+        iframe {
+            position: absolute;
+            padding-left: 320px;
+            top: 0;
+            left: 0;
+            width: 60%;
+            height: 60%;
+            z-index: 1;
+        }
+    }
+}
+
+
+footer {
+    .footer {
+        @include flexboxFooter;
+    }
+
+    .footer__menu li:nth-child(odd) {
+        color: $backgroundColor;
+    }
+
+    .footer__menu--index:visited {
+        @extend %linkVisited;
+    }
+
+    .footer__menu--index:active {
+        @extend %linkActive;
+    }
+}
+
+
+@media (prefers-color-scheme:dark){
+    body {
+        background-color: $darkBackgroundColor; 
+        color: $darkTextColor; 
+    }
+
+    .header {
+        background-color: $backgroundColor;
+    }
+
+    .menu__nav {
+        background-color: #1b1b1b; 
+        color: $darkTextColor; 
+    }
+
+    .about-us__title, .banner__title {
+        color: #ffffff; 
+    }
+
+    .about-us__text:hover {
+        background-color: #444444; 
+    }
+
+    .banner__text {
+        color: #dcdcdc; 
+    }
+
+    .products__price {
+        background-color: #333333; 
+        color: #ffffff; 
+    }
+
+    .cart {
+        background-color: #151515;
+        color: $darkTextColor; 
+    }
+
+    .cart__div {
+        border-bottom: 1px solid #ffffff; 
+    }
+
+    .cart__title, .cart__product, .cart__price {
+        color: #f5f5f5; 
+    }
+
+    .cart__delete {
+        background-color: #333333; 
+    }
+}
+
+@media (max-width: 780px) {
+    body{
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .header {
+        width: 54em;
+        padding: 20px;
+    }
+
+    .header i {
+        width: 10%;
+    }
+
+    .menu__nav{
+       padding: clamp(3rem, 2vw, 4rem);
+       font-size: 15px;
+       text-align: center;
+    }
+
+    .about-us{
+        text-align: center;
+        font-size: clamp(1rem, 2.5vw, 2rem);
+        width: 105%;
+    }
+
+    @media (hover: hover){
+        .about-us p:hover { 
+            background-color:$backgroundColor;
+        }
+    }
+
+    .banner{
+        width: 105%;
+    }
+
+    .products{
+        grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+        padding-left: 4.06em;
+    }
+
+    .products__img{
+        width: 150px;
+    }
+
+    .cart{
+        width: 400px;
+        top: 80px;
+    }
+
+    iframe{
+        width: 105%;
+    }
+}
+
+
+
+@media (max-width: 430px) {
+    header {
+        width: 38em;
+        padding: 20px 40px;
+    }
+
+    .logo{
+        width: 100px;
+    }
+
+    header i {
+        width: 70px;
+    }
+    
+    .menu{
+        width: 185%;
+    }
+
+    .menu__nav{
+        padding: clamp(1.55rem, 2vw, 2rem);
+        font-size: 20px;
+    }
+
+    .about-us{
+        text-align: center;
+        font-size: clamp(.99rem, 2.5vw, 2rem);
+        width: 185%;
+    }
+
+    .banner{
+        padding: clamp(1.75rem,2vw,0rem);
+        width: 185%;
+    }
+
+    .banner__title{
+        font-size: 20px;
+    }
+
+    .banner__text{
+        font-size: 16px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+        padding: 1em;
+        width: 185%;
+    }
+
+    .products__img{
+        max-width: 200px;
+        margin-bottom: 10px;
+    }
+
+    .products__name,
+    .products__price{
+        padding: 0 10px;
+    }
+
+    .cart {
+        width: 85%;
+        box-shadow: none;
+    }
+
+    .cart__title{
+        font-size: 25px;
+    }
+
+    .cart__div{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cart__img{
+        width: 20%;
+        padding: 15px 0px;
+    }
+
+    .cart p{
+        margin: 5px;
+    }
+
+    .cart__delete{
+        width: 50px;
+    }
+
+    iframe{
+        width: 135%;
+    }
+}

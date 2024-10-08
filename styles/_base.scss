@@ -1,0 +1,146 @@
+
+@mixin body{
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 15px;
+    font-weight: 300;
+    color: #323030;
+    margin: 0;
+}
+
+@mixin flexboxHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+@mixin flexboxMenu {
+    display: flex;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+@mixin menuLateral{
+    width: 250px;
+    background-color: $darkBackgroundColor;
+    padding: 30px;
+    box-sizing: border-box;
+    height: 50%;
+    position: fixed;
+    top: 90px;
+    left: 0%;
+    box-shadow: -19px -1px 22px -15px rgba(0, 0, 0, 0.30);
+    z-index: 10;
+}
+
+@mixin menuLateralDiv{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+@mixin menuLateralTitle{
+    display: flex;
+    justify-content: center;
+    color: rgb(255, 0, 0);
+    font-size: 30px;
+    box-sizing: border-box;
+    padding-left: 40px;
+}
+
+@mixin menuLateral_nav{
+    color: $backgroundColor;
+    font-size: 18px;
+    padding: 20px 0px;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+@mixin carritoBadge{
+    position: absolute;
+    top: 0px;
+    right: -10px;
+    background-color: #e81919;
+    color: rgb(255, 255, 255); 
+    padding: 10px 15px;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 50%;
+}
+
+@mixin flexboxProducts {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+@mixin cart {
+    width: 600px;
+    background-color: $darkBackgroundColor;
+    padding: 25px;
+    box-sizing: border-box;
+    max-height: 720px;
+    position: fixed;
+    right: 0%;
+    top: 100px;
+    box-shadow: -19px -1px 22px -15px rgba(0, 0, 0, 0.30);
+    z-index: 10;
+    overflow-y: auto;
+    border: 3px solid red;
+}
+
+@mixin cartTitleDiv{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+@mixin cartTitle {
+    width: 100%;
+    text-align: center;
+    padding-left: 60px;
+    font-size: 30px;
+    font-weight: 600;
+    box-sizing: border-box;
+    color: rgb(245, 3, 3);
+}
+
+@mixin cartDiv {
+    border-bottom: 1px solid #fa0202;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin: 20px;
+    box-sizing: border-box;
+}
+
+@mixin cartProduct {
+    font-size: 20px;
+    font-weight: 500;
+    color: $backgroundColor;
+}
+
+@mixin cartPrice {
+    font-weight: 500;
+    font-size: 20px;
+    color: $backgroundColor;
+}
+
+@mixin flexboxFooter {
+    display: flex;
+    flex-direction: column;
+}
+
+%linkVisited {
+    text-decoration: none;
+    color: rgb(128, 0, 128);
+}
+
+%linkActive { 
+    text-decoration: none;
+    color: rgb(20, 188, 245);
+}
