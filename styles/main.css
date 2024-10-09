@@ -496,7 +496,7 @@ footer .footer__menu li:nth-child(odd) {
     max-width: 150px;
   }
   .cart {
-    max-width: 40%;
+    max-width: 50%;
   }
   .cart__title {
     font-size: 25px;
@@ -591,6 +591,8 @@ footer .footer__menu li:nth-child(odd) {
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     max-width: 50%;
   }
   .cart__title {

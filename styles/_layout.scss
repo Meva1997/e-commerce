@@ -505,7 +505,7 @@ footer {
     }
 
     .cart {
-        max-width: 40%;
+        max-width: 50%;
     }
 
     .cart__title{
@@ -624,6 +624,8 @@ footer {
         box-sizing: border-box;
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         max-width: 50%;
     }
 
