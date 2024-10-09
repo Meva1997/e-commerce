@@ -586,7 +586,7 @@ footer .footer__menu li:nth-child(odd) {
     z-index: 1;
   }
 }
-@media (max-width: 670px) {
+@media (max-width: 723px) {
   .cart {
     box-sizing: border-box;
     display: flex;
